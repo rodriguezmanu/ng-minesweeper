@@ -1,0 +1,33 @@
+<div>
+  <!-- New game button -->
+  <button mat-raised-button (click)="newGame()" >New Game</button>
+
+  <!-- Settings Options toogle -->
+  <mat-button-toggle (change)="settingOn =!settingOn" >Settings</mat-button-toggle>
+
+  <!-- Settings form -->
+  <form [formGroup]="settingsForm" (ngSubmit)="setOptions()" *ngIf="settingOn">
+    <div class="example-container">
+      <!-- Columns -->
+      <mat-form-field>
+        <input matInput placeholder="Columns" formControlName="columns">
+      </mat-form-field>
+      <!-- Rows -->
+      <mat-form-field>
+        <input matInput placeholder="Rows" formControlName="rows">
+      </mat-form-field>
+      <!-- Mines -->
+      <mat-form-field>
+        <input matInput placeholder="Mines" formControlName="mines">
+      </mat-form-field>
+
+      <!-- Submit form button -->
+      <button mat-raised-button type="submit" [disabled]="settingsForm.invalid">Set options</button>
+    </div>
+
+  </form>
+
+  <!-- Timer -->
+  <div>{{ stopWatch }}</div>
+
+</div>
