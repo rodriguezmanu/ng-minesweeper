@@ -24,7 +24,7 @@ export class SettingsService {
   }
 
   get mines(): number {
-    return this._mines;
+    return Number(this._mines);
   }
 
   set mines(value: number) {
@@ -32,7 +32,7 @@ export class SettingsService {
   }
 
   get rows(): number {
-    return this._rows;
+    return Number(this._rows);
   }
 
   set rows(value: number) {
@@ -40,7 +40,7 @@ export class SettingsService {
   }
 
   get columns(): number {
-    return this._columns;
+    return Number(this._columns);
   }
 
   set columns(value: number) {

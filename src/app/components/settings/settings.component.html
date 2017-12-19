@@ -1,13 +1,15 @@
 <div>
-  <!-- New game button -->
-  <button mat-raised-button (click)="newGame()" >New Game</button>
+  <div class="settings">
+    <!-- New game button -->
+    <button mat-raised-button (click)="newGame()" >New Game</button>
 
-  <!-- Settings Options toogle -->
-  <mat-button-toggle (change)="settingOn =!settingOn" >Settings</mat-button-toggle>
+    <!-- Settings Options toogle -->
+    <mat-button-toggle (change)="settingOn =!settingOn" >Settings</mat-button-toggle>
+  </div>
 
   <!-- Settings form -->
   <form [formGroup]="settingsForm" (ngSubmit)="setOptions()" *ngIf="settingOn">
-    <div class="example-container">
+    <div class="settings-container">
       <!-- Columns -->
       <mat-form-field>
         <input matInput placeholder="Columns" formControlName="columns">
@@ -21,6 +23,9 @@
         <input matInput placeholder="Mines" formControlName="mines">
       </mat-form-field>
 
+    </div>
+    <!-- Buttons container -->
+    <div class="buttons-container">
       <!-- Submit form button -->
       <button mat-raised-button type="submit" [disabled]="settingsForm.invalid">Set options</button>
     </div>

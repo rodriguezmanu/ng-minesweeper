@@ -27,7 +27,7 @@ export class AppComponent {
    * On game event from setting component
    * @param event
    */
-  onGame(event) {
+  onGame(event): void {
     this.startGame = event;
     if (this.mapComponent) {
       this.mapComponent.init();

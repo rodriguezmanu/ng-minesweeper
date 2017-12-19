@@ -1,8 +1,16 @@
-  .example-container {
-    display: flex;
-    flex-direction: column;
-  }
+.settings-container,
+.buttons-container,
+.settings {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
 
-  .example-container>* {
-    width: 100%;
-  }
+.settings-container > * {
+  width: 20%;
+  padding: 10px;
+}
+
+.settings > button {
+  margin-right: 10px;
+}
