@@ -6,17 +6,19 @@ import { Injectable } from '@angular/core';
 export class GameService {
 
   board = [];
+  statusGame =  true;
 
   constructor(private settingsService: SettingsService) {
   }
 
   /**
    *
-   *
+  *
    * @memberof GameService
    */
   startNewGame() {
     this.buildMap();
+    this.statusGame = false;
   }
 
   /**
@@ -32,7 +34,6 @@ export class GameService {
         this.board[row][column] = cell;
       }
     }
-
     this.addMines();
   }
 
@@ -52,5 +53,14 @@ export class GameService {
         placed++;
       }
     } while (placed < this.settingsService.mines);
+  }
+
+  /**
+   * Setting status
+   *
+   * @memberof GameService
+   */
+  setGameOver() {
+    this.statusGame = true;
   }
 }

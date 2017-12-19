@@ -5,12 +5,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { SettingsComponent } from './components/settings/setting.component';
 import { MapComponent } from './components/map/map.component';
+import { StatusDialogComponent } from './shared/status.dialog';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { SettingsService } from './services/settings.service';
 import { GameService } from './services/game.service';
@@ -19,7 +21,8 @@ import { GameService } from './services/game.service';
   declarations: [
     AppComponent,
     SettingsComponent,
-    MapComponent
+    MapComponent,
+    StatusDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -28,12 +31,14 @@ import { GameService } from './services/game.service';
     MatInputModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatDialogModule
   ],
   providers: [
     SettingsService,
     GameService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [StatusDialogComponent]
 })
 export class AppModule {}
