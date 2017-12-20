@@ -1,0 +1,34 @@
+<hr>
+
+<!-- Timer -->
+<div>{{ stopWatch }}</div>
+
+<!-- Board -->
+<table oncontextmenu="return false">
+  <tr *ngFor="let row of board">
+    <td *ngFor="let cell of row">
+      <!-- Gaming state -->
+      <div *ngIf="!disableAll; else gameOver">
+        <img
+          *ngIf="cell.isCovered(); else uncovered"
+          (click)="cell.isFlagged || openCell(cell)"
+          (contextmenu)="checkFlagged(cell)"
+          [src]="handlerCell(cell)"
+        />
+
+        <ng-template #uncovered>
+          <img [src]="cell.img" />
+        </ng-template>
+      </div>
+
+      <!-- Finish game -->
+      <ng-template #gameOver>
+        <div *ngIf="disableAll">
+          <img [src]="cell.img"/>
+        </div>
+      </ng-template>
+    </td>
+
+  </tr>
+
+</table>

@@ -29,8 +29,9 @@ export class AppComponent {
    */
   onGame(event): void {
     this.startGame = event;
+
     if (this.mapComponent) {
-      this.mapComponent.init();
+      this.mapComponent.activate();
     }
   }
 }

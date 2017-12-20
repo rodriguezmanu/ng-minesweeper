@@ -6,7 +6,7 @@ import { Component, ChangeDetectionStrategy, Output, EventEmitter } from '@angul
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'settings-component',
+  selector: 'app-settings-component',
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.scss'],
 })
@@ -65,5 +65,7 @@ export class SettingsComponent {
     this.settingsService.mines = this.settingsForm.value.mines;
     this.settingsService.rows = this.settingsForm.value.rows;
     this.settingsService.columns = this.settingsForm.value.columns;
+
+    this.newGame();
   }
 }

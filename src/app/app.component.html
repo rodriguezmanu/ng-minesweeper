@@ -1,5 +1,10 @@
 <div>
+  <!-- Title app -->
   <h2>MINESWEEPER</h2>
-  <settings-component (onStartGame)="onGame($event)"></settings-component>
+
+  <!-- Settings component -->
+  <app-settings-component (onStartGame)="onGame($event)"></app-settings-component>
+
+  <!-- Game map component -->
   <app-map-component *ngIf="startGame"></app-map-component>
 </div>

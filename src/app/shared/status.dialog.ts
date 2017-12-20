@@ -2,13 +2,13 @@ import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
-  selector: 'dialog-status',
+  selector: 'app-dialog-status',
   templateUrl: 'status.dialog.html'
 })
 export class StatusDialogComponent {
   constructor(
     public dialogRef: MatDialogRef<StatusDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: string
   ) {}
 
   /**

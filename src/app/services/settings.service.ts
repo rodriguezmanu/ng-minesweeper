@@ -13,16 +13,6 @@ export class SettingsService {
     this._columns = defaultOptions.columns;
   }
 
-  /**
-   *
-   *
-   * @returns {number}
-   * @memberof SettingsService
-   */
-  setSize(): number {
-    return this._rows * this._columns;
-  }
-
   get mines(): number {
     return Number(this._mines);
   }

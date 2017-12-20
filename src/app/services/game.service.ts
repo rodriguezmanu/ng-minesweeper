@@ -5,28 +5,28 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class GameService {
 
-  board = [];
-  statusGame =  true;
+  private board = [];
+  private statusGame =  true;
 
   constructor(private settingsService: SettingsService) {
   }
 
   /**
+   * Start new game
    *
-  *
    * @memberof GameService
    */
-  startNewGame() {
+  startNewGame(): void {
     this.buildMap();
     this.statusGame = false;
   }
 
   /**
-   *
+   * Generate new map from settings
    *
    * @memberof GameService
    */
-  buildMap() {
+  buildMap(): void {
     for (let row = 0; row < this.settingsService.rows; row++) {
       this.board[row] = [];
       for (let column = 0; column < this.settingsService.columns; column++) {
@@ -42,7 +42,7 @@ export class GameService {
    *
    * @memberof GameService
    */
-  addMines() {
+  addMines(): void {
     let placed = 0;
 
     do {
@@ -60,7 +60,27 @@ export class GameService {
    *
    * @memberof GameService
    */
-  setGameOver() {
+  setGameOver(): void {
     this.statusGame = true;
+  }
+
+  /**
+   * Get board map
+   *
+   * @returns array
+   * @memberof GameService
+   */
+  getBoard(): Cell[][] {
+    return this.board;
+  }
+
+  /**
+   * get game status
+   *
+   * @returns {boolean}
+   * @memberof GameService
+   */
+  getStatusGame(): boolean {
+    return this.statusGame;
   }
 }

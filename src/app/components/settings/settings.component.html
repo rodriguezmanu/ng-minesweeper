@@ -27,9 +27,8 @@
     <!-- Buttons container -->
     <div class="buttons-container">
       <!-- Submit form button -->
-      <button mat-raised-button type="submit" [disabled]="settingsForm.invalid">Set options</button>
+      <button mat-raised-button type="submit" [disabled]="settingsForm.invalid || (this.settingsForm.value.rows * this.settingsForm.value.columns) < this.settingsForm.value.mines">Set options</button>
     </div>
-
   </form>
 
 </div>
