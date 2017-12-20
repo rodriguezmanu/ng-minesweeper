@@ -15,14 +15,13 @@ import { IMAGES } from '../../app.constants';
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit {
-  private board;
+  board;
+  stopWatch: number;
   private mines: number;
-  private minesCount: number;
   private uncoveredCells: number;
   private disableAll: boolean;
   private timer$: Observable<number>;
   private timerSubscription: Subscription;
-  private stopWatch: number;
 
   constructor(
     private gameService: GameService,
@@ -49,7 +48,6 @@ export class MapComponent implements OnInit {
     this.stopWatch = 0;
     this.startTimer();
 
-    this.minesCount = 0;
     this.uncoveredCells = 0;
   }
 

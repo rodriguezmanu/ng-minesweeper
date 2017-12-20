@@ -8,7 +8,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 export class StatusDialogComponent {
   constructor(
     public dialogRef: MatDialogRef<StatusDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: string
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
 
   /**

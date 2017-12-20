@@ -9,7 +9,7 @@ import { Component, ViewChild, HostListener } from '@angular/core';
 export class AppComponent {
   @ViewChild(MapComponent) mapComponent: MapComponent;
 
-  private startGame = false;
+  startGame = false;
 
   /**
    * Alert confirmartion for reload or close tab
@@ -18,10 +18,10 @@ export class AppComponent {
    * @returns
    * @memberof AppComponent
    */
-  // @HostListener('window:beforeunload', ['$event'])
-  // function($event) {
-  //   return ($event.returnValue = false);
-  // }
+  @HostListener('window:beforeunload', ['$event'])
+  function($event) {
+    return ($event.returnValue = false);
+  }
 
   /**
    * On game event from setting component

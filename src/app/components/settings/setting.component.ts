@@ -13,8 +13,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class SettingsComponent {
   @Output() onStartGame: EventEmitter<any> = new EventEmitter();
 
-  private settingsForm: FormGroup;
-  private settingOn = false;
+  settingsForm: FormGroup;
+  settingOn = false;
 
   constructor(
     private formBuilder: FormBuilder,
